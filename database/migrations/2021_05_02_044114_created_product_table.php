@@ -12,12 +12,13 @@ class CreatedProductTable extends Migration
      * @return void
      */
     public function up()
-    {
+    {Schema::create('products', function (Blueprint $table) {
         $table->id();
         $table->string('title');
         $table->string('image');
         $table->unsignedInteger('likes')->default(0);
         $table->timestamps();
+    });
         
     }
 
