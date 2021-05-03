@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Jobs\TestJob;
 use Illuminate\Console\Command;
 
 class FireEvent extends Command
@@ -11,32 +12,11 @@ class FireEvent extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'fire';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
-    protected $description = 'Command description';
-
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    /**
-     * Execute the console command.
-     *
-     * @return int
-     */
+    
     public function handle()
     {
-        return 0;
+        TestJob::dispatch();
     }
 }
