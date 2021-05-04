@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 
 /*
@@ -26,3 +27,4 @@ use App\Http\Controllers\ProductController;
 // Route::delete('/product/{id}',[ProductController::class,'destroy']);
 
 Route::apiResource('/products',ProductController::class);
+Route::get('user',[UserController::class,'random']);
